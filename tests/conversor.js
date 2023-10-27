@@ -12,10 +12,10 @@ test('Prueba de conversión', async (t) =>{
 
     await t
         .click(select1)
-        .click(Selector('option').withText('Metros'))
+        .click(Selector('option').withText('Kilómetros'))
+        .typeText(inputValue, '1')
         .click(select2)
         .click(Selector('option').withText('Metros'))
-        .typeText(inputValue, '1')
         .click(convertButton);
-    await t.expect(result.value).eql('1');
+    await t.expect(result.value).eql('1000');
 });
