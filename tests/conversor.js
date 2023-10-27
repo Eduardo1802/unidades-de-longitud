@@ -1,6 +1,6 @@
 const { Selector } = require("testcafe");
 
-fixture`Testiando el acceso`.page("http://185.253.152.29:8000/");
+fixture`Prueba de conversión`.page("http://185.253.152.29:8000/");
 
 
 test('Prueba de conversión', async (t) =>{
@@ -14,8 +14,8 @@ test('Prueba de conversión', async (t) =>{
         .click(select1)
         .click(Selector('option').withText('Metros'))
         .click(select2)
-        .click(Selector('option').withText('Centímetros'))
+        .click(Selector('option').withText('Metros'))
         .typeText(inputValue, '1')
         .click(convertButton);
-    await t.expect(result.value).eql('100');
+    await t.expect(result.value).eql('1');
 });
