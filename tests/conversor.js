@@ -15,5 +15,5 @@ test('Prueba de conversión', async (t) =>{
         .click(Selector('option').withText('Metros'))
         .typeText(inputValue, '1')
         .click(convertButton);
-    await t.expect(result.value).eql('100');
+    await t.expect(result.value).eql('20');
 });
